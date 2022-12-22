@@ -14,6 +14,8 @@ services:
           - /tmp/radar.gif:/tmp/radar.gif
           - /sys/class/hwmon/hwmon1/temp1_input:/sys/class/thermal/thermal_zone0/temp:ro
           - /etc/localtime:/etc/localtime:ro
+        ports:
+          - '8123:8123'
         devices:
             - /dev/zigbee
         environment:
