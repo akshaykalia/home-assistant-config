@@ -5,7 +5,7 @@ services:
         image: ghcr.io/home-assistant/home-assistant:stable
         labels:
           com.centurylinklabs.watchtower.monitor-only: "true"
-        volumes:
+          volumes:
           - /opt/homeassistant:/config
           - /opt/nginx-proxy-manager/database.sqlite:/tmp/database.sqlite
           - /var/run/docker.sock:/var/run/docker.sock
