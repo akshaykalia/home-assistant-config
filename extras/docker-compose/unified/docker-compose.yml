@@ -6,7 +6,7 @@ services:
         labels:
           com.centurylinklabs.watchtower.monitor-only: "true"
         volumes:
-          /opt/homeassistant:/config
+          - /opt/homeassistant:/config
           - /opt/nginx-proxy-manager/database.sqlite:/tmp/database.sqlite
           - /var/run/docker.sock:/var/run/docker.sock
           - /home/aneisch/symlinks_for_rsync/hass-docker-ssh:/root/.ssh:ro
@@ -30,13 +30,12 @@ services:
         container_name: mariadb
         image: 'mariadb:latest'
         user: '99'
-        environment:
-          - TZ=America/Chicago
         ports:
           - '127.0.0.1:3306:3306'
         volumes:
           - /opt/mariadb:/var/lib/mysql
         environment:
+          - TZ=America/Chicago
           - MYSQL_ROOT_PASSWORD=PASSWORD
           - MYSQL_USER=homeassistant
           - MYSQL_PASSWORD=homeassistant
