@@ -1,4 +1,3 @@
-# Concat 'homeassistant' and 'other' docker-compose files
 version: '3.2'
 services:
     homeassistant:
