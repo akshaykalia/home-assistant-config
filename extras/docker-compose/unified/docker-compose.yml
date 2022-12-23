@@ -241,7 +241,6 @@ services:
     433_mqtt:
         container_name: 433_mqtt
         image: ghcr.io/aneisch/rtl_433_mqtt:latest
-        user: '99'
         labels:
           com.centurylinklabs.watchtower.enable: "false"
         restart: 'no'
